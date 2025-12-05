@@ -1,0 +1,43 @@
+rewrite_task:
+  description: >
+    Transform the provided screenplay: {original_script} into the target genre: {genre}.
+    Preserve key plot points, character relationships, and emotional depth.
+    Fully adapt the style, tone, and pacing to match the conventions of the new genre.
+    Ensure scene formatting follows screenplay standards.
+  expected_output: >
+    A complete rewritten script in proper screenplay format, including:
+      - Scene headings
+      - Action lines
+      - Dialogue
+    The output should be only the full adapted script, with no commentary or additional explanations.
+  agent: script_transformer
+  output_file: output/script.md
+
+review_task:
+  description: >
+    Analyze the rewritten script for genre accuracy, narrative coherence, pacing, and character development.
+    Provide constructive feedback highlighting any tonal mismatches, pacing issues, or character inconsistencies,
+    along with clear, actionable suggestions for improvement.
+  expected_output: >
+    A structured review report including:
+      - An assessment of how well the script reflects the target genre.
+      - Observations on narrative flow, dialogue authenticity, and character development.
+      - 3–5 concise, actionable recommendations for refinement.
+    Output should be in plain text or markdown, without wrapping in code blocks.
+  context:
+    - rewrite_task
+  agent: quality_editor
+
+improvement_task:
+  description: >
+    Examine the review report of the rewritten script and produce a set of instructions for improving the script.
+    Indicate whether the script is ready for production or requires another iteration.
+  expected_output: >
+    A structured JSON object with two fields:
+      {
+        "ready": true/false,
+        "rewrite_instructions": "Concise instructions for the script transformer"
+      }
+  context:
+    - review_task
+  agent: iteration_supervisor

@@ -1,0 +1,13 @@
+numpy==1.26.4
+fastapi
+uvicorn[standard]
+torch==2.2.1
+transformers
+moviepy
+opencv-python-headless
+ffmpeg-python
+huggingface_hub
+openai
+python-multipart
+python-dotenv
+tqdm

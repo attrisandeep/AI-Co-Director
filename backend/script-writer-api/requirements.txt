@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pydantic
+transformers
+torch
+openai
+crewai
+crewai_tools
+PyMuPDF
+pytesseract
+Pillow
+python-multipart

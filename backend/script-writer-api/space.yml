@@ -1,0 +1,9 @@
+# space.yml
+title: "Script Writer API"
+emoji: "🎬"
+colorFrom: "blue"
+colorTo: "green"
+sdk: "fastapi"
+app_file: "api.py"
+pinned: false
+python_version: "3.10"

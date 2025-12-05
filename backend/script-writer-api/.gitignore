@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.env
+.venv/
+venv/
+env/
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Project data
+uploads/
+output/
+script_writer/output/
